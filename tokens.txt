@@ -1,0 +1,3 @@
+# Here is an example of a four-word token and an explanation of how we discovered it. Notice that it is not an actual token that you'll find in the assignment. Please delete these lines before getting started!
+pen-pineapple-apple-pen
+We found that there is a text file containing a url on the desktop. Following the url we were brought to a page where we were prompted a password. After providing the password that we discovered before, we were redirected to a video at the end of which this token was displayed.
