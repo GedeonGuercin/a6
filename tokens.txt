@@ -40,4 +40,4 @@ Transaction ID:
 We found wallet.dat through this path: (/mnt2/home/bob/.bitcoin/wallet.dat). We then used the a bitcoin compression tool on L1JHBR39uUVVvU27SFmYdA6SAmCdGYHYSLPYrMVgGfDZSACrmaPy to get an address that we looked up in the Blockchain Explorer to get the 64-character id.
 
 'taproot eclogite vesical avowal' (/mnt2/home/bob/Downloads/target)
-We found a target.xz.asc file in Bob’s download folder and a private key in a hidden folder called .gpg. We used “gpg --import” to import the private key into downloads then used “gpg --output --decrypt” to decrypt the .target.tar.xz file. Then we unzipped the .target.tar.xz file and found the token in the target folder.
+We found a target.xz.asc file in Bob’s download folder and a private key in a hidden folder called .gpg. We used “gpg --import” to import the private key into downloads then used “gpg --output --decrypt” to decrypt the .target.tar.xz file. Then we unzipped the .target.tar.xz file and found the token in the target folder as a file name.
