@@ -1,47 +1,43 @@
-# Here is an example of a four-word token and an explanation of how we discovered it. Notice that it is not an actual token that you'll find in the assignment. Please delete these lines before getting started!
-pen-pineapple-apple-pen
-We found that there is a text file containing a url on the desktop. Following the url we were brought to a page where we were prompted a password. After providing the password that we discovered before, we were redirected to a video at the end of which this token was displayed.
-
 At least 1 password:
 Distributed
-For mnt2, we used an online resource called bruteforce-luks to find the password. Then we used sudo cryptsetup open /dev/sdb2 sdb2decrypted --type luks. We then used “sudo cryptsetup open /dev/sdb2 sdb2decrypted --type luks” and entered the password and were allowed access to mount 2.
+For mnt2, we used an online resource called bruteforce-luks to find the password. Then we ran "sudo cryptsetup open /dev/sdb2 sdb2decrypted --type luks". We then used “sudo cryptsetup open /dev/sdb2 sdb2decrypted --type luks” and entered the password and were allowed access to mount 2.
 
 
 At least 6 (out of 9) two-word tokens:
 syndesis thinner (mnt1/opt/intrusion.sh)
-We c’d into the opt folder. Then we displayed the contents of intrusion.sh and found the token.
+In /mnt1, we explored the opt folder. Then we displayed the contents of intrusion.sh and found the token.
 
 fishery rattle (mnt1/opt/bootlocal.sh)
-We c’d into the opt folder. Then we displayed the contents of bootcal.sh and found the token.
+In /mnt1, we explored the opt folder. Then we displayed the contents of bootcal.sh and found the token.
 
 rooftree inspirit (/mnt3/grub/grub.cfg)
-We c’d into the grub folder. Then we displayed the contents of grub.cfg and found the token.
+In /mnt3, we explored the grub folder. Then we displayed the contents of grub.cfg and found the token.
 
 diesis bethink (/mnt2/home/bob/Desktop/chatlog0.txt)
-After cracking the password to get into mount 2, we c’d into Bob’s desktop. Then we displayed the contents of chatlog0.txt and found the token.
+After cracking the password to get into mount 2, we explored Bob’s desktop through this path, "/mnt2/home/bob/Desktop/". Then we displayed the contents of chatlog0.txt and found the token.
 
 satang taint (/mnt2/home/bob/.bash_history)
-After cracking the password to get into mount 2, we c’d into Bob’s folder. Then we displayed all the contents by using the command “ls -a” and found .bash_history and found the token.
+After cracking the password to get into mount 2, we explored Bob’s desktop through this path, "/mnt2/home/bob/". Then we displayed all the contents by using the command “ls -a” and found .bash_history and found the token.
 
 boxhaul scuttle (/mnt2/home/bob/.irc/chatlog1.txt) 
-After decrypting by updating openssl using sudo apt-get install libssl-dev, we used “./compile.sh”. Then we decrypted using what was in .bash_history
+After decrypting by updating openssl using sudo apt-get install libssl-dev, we ran “./compile.sh”. Then we ran decryption using the commands we found in .bash_history to get access to chatlog1.txt where we found the token.
 
 
 At least 3 (out of 4) three-word tokens (All in mount 2):
 _ulema_military_fidge_ (/mnt2/var/log/auth.log)
-We c’d into the var folder. Then we c’d into the log folder displayed the contents of auth.log and found the token.
+In mnt2, we explored the the var folder. Then we cd’d into the log folder, displayed the contents of auth.log and found the token.
 
 ?devise$mane$corvette$(/mnt2/var/log/vsftpd.log)
-We c’d into the grub folder. Then we c’d into the log folder displayed the contents of vsftpd.log and found the token.
+In mnt2, we explored the the var folder. Then we cd’d into the log folder, displayed the contents of vsftpd.log and found the token.
 
 <gait.gymkhana.heel> (/mnt2/home/bob/.ssh/authorized_keys)
-We c’d into the home then bob’s folder. Then we used “ls -la” to find the .ssh hidden folder and displayed the contents of authorized_keys and found the token.
+In mnt2, we explored the the home folder where we went into the folder named bob. Then we used “ls -la” to find the .ssh hidden folder and displayed the contents of authorized_keys and found the token.
 
 
 At least 2 (out of 4) transaction ID (limit 1) or four-word tokens:
 Transaction ID:
 8eb9adc9e1d4237ee8da2998eb954683b955fc675e1c327c3494426b4da09813
-We found wallet.dat through this path: (/mnt2/home/bob/.bitcoin/wallet.dat). We then used the a bitcoin compression tool on L1JHBR39uUVVvU27SFmYdA6SAmCdGYHYSLPYrMVgGfDZSACrmaPy to get an address that we lookep up in the Blockchain Explorer to get the 64-character id.
+We found wallet.dat through this path: (/mnt2/home/bob/.bitcoin/wallet.dat). We then used the a bitcoin compression tool on L1JHBR39uUVVvU27SFmYdA6SAmCdGYHYSLPYrMVgGfDZSACrmaPy to get an address that we looked up in the Blockchain Explorer to get the 64-character id.
 
 'taproot eclogite vesical avowal' (/mnt2/home/bob/Downloads/target)
 We found a target.xz.asc file in Bob’s download folder and a private key in a hidden folder called .gpg. We used “gpg --import” to import the private key into downloads then used “gpg --output --decrypt” to decrypt the .target.tar.xz file. Then we unzipped the .target.tar.xz file and found the token in the target folder.
